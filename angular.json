@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "iServices"
+    }
+  },
+  "defaultProject": "iServices",
+  "cli": {
+    "analytics": false
+  }
 }
