@@ -6,14 +6,16 @@ import { SharedComponent } from './shared.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ChatComponent } from './chat/chat.component';
+// import { ChatComponent } from './chat/chat.component';
+import { ChatModule } from './chat/chat.module';
 
 
 @NgModule({
-  declarations: [SharedComponent, LoginComponent, RegisterComponent, ProfileComponent, ChatComponent],
+  declarations: [SharedComponent, LoginComponent, RegisterComponent, ProfileComponent],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    ChatModule
   ]
 })
 export class SharedModule { }
