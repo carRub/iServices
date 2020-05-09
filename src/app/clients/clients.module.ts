@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ClientsRoutingModule } from './clients-routing.module';
 import { ClientsComponent } from './clients.component';
-import { FavoritesComponent } from './favorites/favorites/favorites.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({

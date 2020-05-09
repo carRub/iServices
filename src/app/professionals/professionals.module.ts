@@ -7,15 +7,17 @@ import { ProfessionalMainComponent } from './professional-main/professional-main
 import { ProfessionalDetailComponent } from './professional-detail/professional-detail.component';
 import { ProfessionalListComponent } from './professional-list/professional-list.component';
 import { HireComponent } from './hire/hire.component';
-import { ScoreComponent } from './score/score.component';
-import { ScoreListComponent } from './score/score-list/score-list.component';
+// import { ScoreComponent } from './score/score.component';
+// import { ScoreListComponent } from './score/score-list/score-list.component';
+import { ScoreModule } from './score/score.module';
 
 
 @NgModule({
-  declarations: [ProfessionalsComponent, ProfessionalMainComponent, ProfessionalDetailComponent, ProfessionalListComponent, HireComponent, ScoreComponent, ScoreListComponent],
+  declarations: [ProfessionalsComponent, ProfessionalMainComponent, ProfessionalDetailComponent, ProfessionalListComponent, HireComponent],
   imports: [
     CommonModule,
-    ProfessionalsRoutingModule
+    ProfessionalsRoutingModule,
+    ScoreModule
   ]
 })
 export class ProfessionalsModule { }
