@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 
 import {FormsModule} from '@angular/forms'
+
+import { CoreModule } from './core/core.module';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import {FormsModule} from '@angular/forms'
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

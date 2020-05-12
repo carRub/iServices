@@ -10,6 +10,7 @@ import { HireComponent } from './hire/hire.component';
 // import { ScoreComponent } from './score/score.component';
 // import { ScoreListComponent } from './score/score-list/score-list.component';
 import { ScoreModule } from './score/score.module';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ScoreModule } from './score/score.module';
   imports: [
     CommonModule,
     ProfessionalsRoutingModule,
-    ScoreModule
+    ScoreModule,
+    CoreModule
   ]
 })
 export class ProfessionalsModule { }

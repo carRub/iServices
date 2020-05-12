@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap.scss";
 
+
 div#imgLogin{
     /*background-image: url('./assets/when-products-turn-into-smart-services.jpg');*/
     /*assets/when-products-turn-into-smart-services.jpg*/
@@ -32,3 +33,19 @@ background-size: cover;
 de fondo o si hay problemas para cargarla */
 
 }
+
+.btn-p{
+    background-color: #8448FF;
+    color: white;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #8448FF;
+    border-color: #8448FF;
+}
+
+body {
+    background: #F1F3FA;
+  }
+
