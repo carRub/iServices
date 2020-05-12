@@ -8,14 +8,17 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 // import { ChatComponent } from './chat/chat.component';
 import { ChatModule } from './chat/chat.module';
-
+import {FormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [SharedComponent, LoginComponent, RegisterComponent, ProfileComponent],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    ChatModule
+    ChatModule,
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }
