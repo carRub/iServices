@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/scss/bootstrap.scss"
+@import "~bootstrap/scss/bootstrap.scss";
+
+.btn-p{
+    background-color: #8448FF;
+    color: white;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #8448FF;
+    border-color: #8448FF;
+}
+
+body {
+    background: #F1F3FA;
+  }
