@@ -9,7 +9,7 @@ const routes: Routes = [{ path: 'clients', loadChildren: () => import('./clients
                         { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
                         { path: 'shared', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },
                         { path: 'chat', loadChildren: () => import('./shared/chat/chat.module').then(m => m.ChatModule) },
-                        { path: '', loadChildren: () => import('./core/core.module').then(m => m.CoreModule)}];
+                        { path: '', redirectTo: '', pathMatch: 'full'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

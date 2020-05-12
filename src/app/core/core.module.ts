@@ -11,6 +11,9 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     CommonModule,
     CoreRoutingModule
+  ],
+  exports: [
+    HeaderComponent
   ]
 })
 export class CoreModule { }
