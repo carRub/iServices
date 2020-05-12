@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardService } from './core/auth/auth-guard.service';
 
 
-const routes: Routes = [{ path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule) },
+const routes: Routes = [{ path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule),canActivate:[AuthGuardService] },
                         { path: 'core', loadChildren: () => import('./core/core.module').then(m => m.CoreModule) },
                         { path: 'professionals', loadChildren: () => import('./professionals/professionals.module').then(m => m.ProfessionalsModule) },
                         { path: 'score', loadChildren: () => import('./professionals/score/score.module').then(m => m.ScoreModule) },
