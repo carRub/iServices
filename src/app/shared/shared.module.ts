@@ -10,15 +10,18 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChatModule } from './chat/chat.module';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { LandingComponent } from './landing/landing.component';
+import { ServicesModule } from '../services/services.module';
 
 @NgModule({
-  declarations: [SharedComponent, LoginComponent, RegisterComponent, ProfileComponent],
+  declarations: [SharedComponent, LoginComponent, RegisterComponent, ProfileComponent, LandingComponent],
   imports: [
     CommonModule,
     SharedRoutingModule,
     ChatModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServicesModule
   ]
 })
 export class SharedModule { }
