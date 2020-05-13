@@ -47,5 +47,177 @@ de fondo o si hay problemas para cargarla */
 
 body {
     background: #F1F3FA;
-  }
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #8448ff;
+    border-color: #8448ff;
+}
+
+.btn-outline-danger {
+    color: #8448ff;
+    border-color: #8448ff;
+}
+
+.btn-outline-danger:hover {
+    color: #fff;
+    background-color: #8448FF;
+    border-color: #8448FF;
+}
+
+#top {
+    background-color: #fff;
+}
+
+/*CSS PARA SLIDER*/
+#h2Slider {
+    font-size: 60px;
+}
+
+#h4Slider {
+    color: #fff;
+}
+
+#slider-animation {
+    max-height: 550px;
+}
+
+.heading-box h2 {
+    width: 100%;
+    color: red;
+}
+
+h2,
+p {
+    color: #fff;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    right: 15%;
+    color: #000;
+    transform: translateY(-50%);
+}
+
+/*ENDING CSS SLIDER*/
+
+/*CSS PARA SWIPPER*/
+.divider {
+    border: 1px solid #ccc;
+}
+
+img {
+    width: 100%;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+/*ENDING CSS SWIPPER */
+
+/* STARTING CSS SERVICIOS */
+.ptb-50 {
+    padding: 50px 50px;
+}
+
+.section_bg_gray {
+    background-color: #f3f5f7;
+}
+
+.single_what_we_do {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 0 35px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.single_what_we_do:hover {
+    -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.single_what_we_do .top_line {
+    position: absolute;
+    top: 0;
+    left: 44%;
+    background-color: #8448ff;
+    width: 12%;
+    height: 3px;
+}
+
+.single_what_we_do .what_we_do_figure {
+    padding: 40px 0;
+}
+
+.single_what_we_do .what_we_do_figure img {
+    margin: 0 auto;
+}
+
+.single_what_we_do .what_we_do_title {
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 35px;
+    margin: 0;
+    color: #2b353a;
+}
+
+.single_what_we_do .what_we_do_content {
+    padding-bottom: 65px;
+    color: #2b353a;
+}
+
+.single_what_we_do .what_we_do_icon {
+    position: absolute;
+    bottom: -9px;
+    left: 47%;
+    color: #fff;
+    background-color: #8448ff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.single_what_we_do .what_we_do_icon i {
+    font-size: 24px;
+    text-align: center;
+    padding: 2px 3px 2px 5px;
+}
 

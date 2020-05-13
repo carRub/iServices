@@ -8,10 +8,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ0ZXN0IjoiYWFzZmRlYWZ2cWVydnFmIiwiZXhwIjozMDE2MjM5MDIyfQ.nrvlcR1FvMf3A6ppWhMdTl292ULboQR5mHs-LElDr1E";
+  token = "";
 
   constructor(private http:HttpClient) { 
-
+      if(localStorage.token){
+        this.token = localStorage.token;
+      }
   }
 
   private saveToken(token:string){
@@ -47,14 +49,24 @@ export class AuthService {
     return this.http.post(environment.url + '/auth',{email,password}).
     pipe(
       map((data:any)=>{
-        if(data.token){
-          console.log("Guardando Token",data.token);
-          this.saveToken(data.token);
-          console.log("Se ha guardado el token")
+        console.log("DATA",data);
+        if(data.data.token){
+          
+          this.saveToken(data.data.token);
+          
+          console.log("Guardando Token",data.data.token);
+
+          console.log("Se ha guardado el token");
         }
+
+        console.log("token guardado",this.token)
         return data;
       })
     )
+  }
+
+  addUser(user){
+
   }
 
 }
