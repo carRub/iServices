@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  url : ""
+  url : ''
 };
+
+// We should have the real server route
