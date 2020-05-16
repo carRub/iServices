@@ -13,8 +13,7 @@ const routes: Routes = [{path:'google/redirect',loadChildren:()=>import('./share
                         { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
                         { path: 'shared', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) },
                         { path: 'chat', loadChildren: () => import('./shared/chat/chat.module').then(m => m.ChatModule) },
-
-                        { path: '', loadChildren:()=>import('./shared/shared.module').then(m=>m.SharedModule)},
+                        { path: '', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)},
                         { path: 'agenda', loadChildren: () => import('./professionals/agenda/agenda.module').then(m => m.AgendaModule) },
                         { path: 'job', loadChildren: () => import('./professionals/job/job.module').then(m => m.JobModule) }];
 
