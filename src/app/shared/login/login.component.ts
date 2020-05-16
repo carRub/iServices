@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../../core/auth/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { partitionArray } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +11,22 @@ import { AuthService } from '../../core/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService:AuthService) {
+  constructor(private authService:AuthService, private route: ActivatedRoute,
+    private router:Router) {
 
   }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params)=>{
+      if(params.code){
+          this.authService.googleLogin(params).subscribe((data)=>{
+            if(this.authService.isLoggedIn()){
+              this.router.navigateByUrl('/chat');
+            }
+          })
+      }
+
+    })
   }
 
   submit(formulario:NgForm){

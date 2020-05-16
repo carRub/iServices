@@ -50,11 +50,11 @@ export class AuthService {
     pipe(
       map((data:any)=>{
         console.log("DATA",data);
-        if(data.data.token){
+        if(data.token){
           
-          this.saveToken(data.data.token);
+          this.saveToken(data.token);
           
-          console.log("Guardando Token",data.data.token);
+          console.log("Guardando Token",data.token);
 
           console.log("Se ha guardado el token");
         }
@@ -65,8 +65,24 @@ export class AuthService {
     )
   }
 
-  addUser(user){
+  public googleLogin(params){
+    return this.http.get(environment.url+'auth/google/redirect',{params})
+    .pipe(
+      map((data:any)=>{
+        console.log("DATA",data);
+        if(data.token){
+          
+          this.saveToken(data.token);
+          
+          console.log("Guardando Token",data.token);
 
+          console.log("Se ha guardado el token");
+        }
+
+        console.log("token guardado",this.token)
+        return data;
+      })
+    )
   }
 
 }
