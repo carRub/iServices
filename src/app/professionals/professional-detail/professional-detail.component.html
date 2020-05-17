@@ -5,17 +5,17 @@
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic d-flex justify-content-center">
-                        <img [src]="user.foto"
+                        <img src="https://randomuser.me/portraits/men/51.jpg"
                             class="img-responsive" alt="">
                     </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-name">
-                            {{user.nombre}} {{user.apellidos}} 
+                            Juan Pérez
                         </div>
                         <div class="profile-usertitle-job">
-                            {{user.profesion}}
+                            Carpintero
                         </div>
                     </div>
                     <!-- END SIDEBAR USER TITLE -->
@@ -23,16 +23,16 @@
                     <div class="profile-userbuttons">
                         <a type="button" href="#" class="btn btn-p btn-sm">Favoritos</a>
                         <a type="button" routerLink="/chat" class="btn btn-p btn-sm">Chat</a>
-                        <a type="button" (click)="test()" class="btn btn-p btn-sm">Contratar</a>
+                        <a type="button" href="./hire.html" class="btn btn-p btn-sm">Contratar</a>
                     </div>
                     <!-- END SIDEBAR BUTTONS -->
                     <!-- SIDEBAR MENU -->
                     <div class="profile-usermenu panel panel-default">
                         <ul class="list-group">
                             <li class="list-group-item text-muted justify-content-between">Detalles</li>
-                            <li class="list-group-item d-flex justify-content-between"><span class="pull-left"><strong>Trabajos</strong></span>{{user.trabajosRealizados}}</li> <!-- Traer trabajos del back-->
-                            <li class="list-group-item d-flex justify-content-between"><span class="pull-left"><strong>Calificación</strong></span>{{user.calificacion}}</li> <!-- Traer calificación del back-->
-                            <li class="list-group-item d-flex justify-content-between"><span class="pull-left"><strong>Precio por hora</strong></span>${{user.precioPorHora}}</li> <!-- Traer precio del back-->
+                            <li class="list-group-item d-flex justify-content-between"><span class="pull-left"><strong>Trabajos</strong></span> 125</li> <!-- Traer trabajos del back-->
+                            <li class="list-group-item d-flex justify-content-between"><span class="pull-left"><strong>Calificación</strong></span>4.5</li> <!-- Traer calificación del back-->
+                            <li class="list-group-item d-flex justify-content-between"><span class="pull-left"><strong>Precio por hora</strong></span>$100</li> <!-- Traer precio del back-->
                         </ul>
                     </div>
                     <!-- END MENU -->
@@ -42,9 +42,10 @@
                 <div class="profile-content panel panel-heading">
                     <h4>Acerca de...</h4>
                     <div class="panel panel-body">
-                        <p id = "professionalp">
-                            {{user.descripcion}}
-                        </p>
+                        <p id = "professionalp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
                 <div class="panel panel-heading"> <!-- NgFor scores -->

@@ -24,7 +24,6 @@ const profesionistasRoute = require('./routes/profesionistasRoute');
 const serviciosRoute = require('./routes/serviciosRoute');
 const calificacionRoute = require('./routes/calificacionRoute');
 const authRoute = require('./routes/authRoute');
-const chatRoute = require('./routes/chatRoute');
 
 
 app.use('/usuarios', usuariosRoute);
@@ -32,7 +31,6 @@ app.use('/profesionistas', profesionistasRoute);
 app.use('/servicios', serviciosRoute);
 app.use('/calificacion', calificacionRoute);
 app.use('/auth', authRoute);
-app.use('/api/chat', chatRoute);
 app.use(bodyParser.urlencoded({
     extended: true
 }));
