@@ -20,6 +20,9 @@ import { CoreModule } from '../core/core.module';
     ProfessionalsRoutingModule,
     ScoreModule,
     CoreModule
+  ],
+  exports:[
+    ProfessionalMainComponent
   ]
 })
 export class ProfessionalsModule { }

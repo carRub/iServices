@@ -34,9 +34,15 @@ export class LoginComponent implements OnInit {
     console.log(formulario.value.password);
     this.authService.login(formulario.value.email,formulario.value.password)
       .subscribe(
-        (data)=>console.log(data),
+        (data)=>{console.log(data)
+        this.router.navigateByUrl('/')},
         (err)=>console.log(err)
       )
+
+      console.log("redirigir");
   }
+
+
+
 
 }

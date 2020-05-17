@@ -6,13 +6,15 @@ import { ServicesComponent } from './services.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceCardComponent } from './service-list/service-card/service-card.component';
+import { ProfessionalsModule } from '../professionals/professionals.module';
 
 
 @NgModule({
   declarations: [ServicesComponent, ServiceDetailComponent, ServiceListComponent, ServiceCardComponent],
   imports: [
     CommonModule,
-    ServicesRoutingModule
+    ServicesRoutingModule,
+    ProfessionalsModule
   ],
   exports:[
     ServiceListComponent, ServiceCardComponent

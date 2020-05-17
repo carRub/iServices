@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"common":"common","clients-clients-module":"clients-clients-module","professionals-professionals-module":"professionals-professionals-module","default~professionals-agenda-agenda-module~professionals-job-job-module":"default~professionals-agenda-agenda-module~professionals-job-job-module","professionals-agenda-agenda-module":"professionals-agenda-agenda-module","default~shared-chat-chat-module~shared-shared-module":"default~shared-chat-chat-module~shared-shared-module","shared-shared-module":"shared-shared-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"clients-clients-module":"clients-clients-module","default~professionals-agenda-agenda-module~professionals-job-job-module":"default~professionals-agenda-agenda-module~professionals-job-job-module","professionals-agenda-agenda-module":"professionals-agenda-agenda-module","default~professionals-professionals-module~services-services-module~shared-shared-module":"default~professionals-professionals-module~services-services-module~shared-shared-module","common":"common","default~shared-chat-chat-module~shared-shared-module":"default~shared-chat-chat-module~shared-shared-module","shared-shared-module":"shared-shared-module","professionals-score-score-module":"professionals-score-score-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
