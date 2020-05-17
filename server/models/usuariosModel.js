@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs')
+
 const saltRounds = 12
-const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const UsuariosSchema = mongoose.Schema({
-
+    uid: {
+        type: Number,
+        unique: true,
+        required: true
+    },
     nombre: {
         type: String,
         required: true
@@ -36,8 +40,12 @@ const UsuariosSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    foto: {
+    element2: {
         type: String,
+        required: true
+    },
+    element1:{
+        type:String,
         required: true
     },
     estado: {
@@ -49,17 +57,10 @@ const UsuariosSchema = mongoose.Schema({
         required: true
     },
     favoritos: {
-        type: Array,
-        required: false
-    },
-    profesion:{
         type: String,
         required: true
     }
 });
-
-UsuariosSchema.plugin(AutoIncrement, {inc_field: 'uid'});
-
 
 UsuariosSchema.pre('save', function (next) {
     this.password = bcrypt.hashSync(this.password, saltRounds)
