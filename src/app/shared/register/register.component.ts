@@ -8,8 +8,6 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  user = {name:"",profesion:"",foto:"",apellido:""};
-
   constructor() { }
 
   ngOnInit(): void {
@@ -18,15 +16,10 @@ export class RegisterComponent implements OnInit {
   submit(formulario:NgForm){
     console.log("name:",formulario.value.name);
     console.log("profesion",formulario.value.profesion);
-    console.log("image",formulario.value.foto);
+    console.log("image",formulario.value.image);
     console.log("apellido",formulario.value.apellido);
     console.log("email",formulario.value.email);
     console.log("edad",formulario.value.edad);
-
-    this.user.name = formulario.value.name;
-
-
-
 
     
 

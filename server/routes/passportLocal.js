@@ -9,9 +9,9 @@ const users = require('../models/usuariosModel');
 passport.use(new localStrategy({
     usernameField:'email',
     passwordField:'password'
-},async function(username,password,done){
+},function(username,password,done){
     console.log("datos del form", username,password);
-    let usr = users.findOne({email:username,password:password});
+    let usr = users.find({email:username,password:password});
     console.log("user encontrado",usr);
 
     if(usr){

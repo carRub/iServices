@@ -1,6 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
-import { Servicio } from '../../Service';
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-service-card',
@@ -9,7 +7,6 @@ import { Servicio } from '../../Service';
 })
 export class ServiceCardComponent implements OnInit {
 
-  @Input() service: Servicio;
   constructor() { }
 
   ngOnInit(): void {
