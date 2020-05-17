@@ -68,7 +68,8 @@ app.get('/', (req, res) => {
 // conexion de BD
 mongoose.connect(
     process.env.DB_CONNECTION, {
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useNewUrlParser: true
     }/*,
     () => console.log('Conectado a MongoDB')*/
 );
