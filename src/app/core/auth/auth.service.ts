@@ -98,4 +98,10 @@ export class AuthService {
     )
   }
 
+  addService(service){
+    return this.http.post('http://localhost:3000/profesionistas',service)
+    .subscribe((data)=>console.log(data),
+    (err)=>console.log(err))
+  }
+
 }

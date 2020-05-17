@@ -21,11 +21,10 @@
 
               <p id = "professionalp">Foto</p>
 
-              <div class="custom-file">
-                  <label class="custom-file-label" for="customFile">Fotografía</label>
-                  <input ngModel type="file" class="custom-file-input" name="image" required>
-                  
-                </div>
+              <div class="form-group">
+                <label for="foto"></label>
+                <input type="text" ngModel class="form-control" name="foto" required>
+              </div>
 
             </div>
             <div class="col-sm">
@@ -51,6 +50,23 @@
                       <label for="pass">Password</label>
                       <input ngModel type="password" class="form-control" name="password" required>
                 </div>
+
+                <div class="form-group">
+                  <label for="celular">Celular</label>
+                  <input ngModel type="number" class="form-control" name="celular" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="direccion">Celular</label>
+                  <input ngModel type="text" class="form-control" name="direccion" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="estado">Estado</label>
+                  <input ngModel type="text" class="form-control" name="estado" required>
+                </div>
+
+
                 
             </div>
           </div>
