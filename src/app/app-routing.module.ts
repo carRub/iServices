@@ -6,7 +6,7 @@ import { LoginComponent } from './shared/login/login.component';
 
 
 const routes: Routes = [{path:'google/redirect',loadChildren:()=>import('./shared/shared.module').then(m=>m.SharedModule)},
-                        { path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule),/*canActivate:[AuthGuardService] */},
+                        { path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule),canActivate:[AuthGuardService]},
                         { path: 'core', loadChildren: () => import('./core/core.module').then(m => m.CoreModule) },
                         { path: 'professionals', loadChildren: () => import('./professionals/professionals.module').then(m => m.ProfessionalsModule) },
                         { path: 'score', loadChildren: () => import('./professionals/score/score.module').then(m => m.ScoreModule) },

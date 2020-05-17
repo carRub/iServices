@@ -148,10 +148,16 @@ __webpack_require__.r(__webpack_exports__);
 class ClientsService {
     constructor(http) {
         this.http = http;
+        this.clients = null;
         this.loadClients();
     }
     loadClients() {
-        this.http.get('http://localhost:3000/usuarios').subscribe((data) => console.log(data), (err) => console.log(err));
+        this.http.get('http://localhost:3000/usuarios').subscribe((data) => {
+            console.log(data);
+            console.log(typeof data);
+            this.clients = data;
+            console.log("CLIENTS", this.clients);
+        }, (err) => console.log(err));
     }
 }
 ClientsService.ɵfac = function ClientsService_Factory(t) { return new (t || ClientsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
@@ -198,50 +204,6 @@ FavoritesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
                 styleUrls: ['./favorites.component.scss']
             }]
     }], function () { return []; }, null); })();
-
-
-/***/ }),
-
-/***/ "./src/app/core/auth/auth-guard.service.ts":
-/*!*************************************************!*\
-  !*** ./src/app/core/auth/auth-guard.service.ts ***!
-  \*************************************************/
-/*! exports provided: AuthGuardService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuardService", function() { return AuthGuardService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.service */ "./src/app/core/auth/auth.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-
-
-
-
-class AuthGuardService {
-    constructor(authSerive, router) {
-        this.authSerive = authSerive;
-        this.router = router;
-    }
-    canActivate() {
-        if (!this.authSerive.isLoggedIn()) {
-            this.router.navigateByUrl('/');
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-}
-AuthGuardService.ɵfac = function AuthGuardService_Factory(t) { return new (t || AuthGuardService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
-AuthGuardService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: AuthGuardService, factory: AuthGuardService.ɵfac, providedIn: 'root' });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthGuardService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return [{ type: _auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
 
 
 /***/ })

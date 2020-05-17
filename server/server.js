@@ -6,16 +6,16 @@ require('dotenv/config');
 const bodyParser = require('body-parser');
 const swaggerUI = require('swagger-ui-express');
 const swaggerDoc = require('./doc/swagger.json');
-var busboy = require('connect-busboy');
-const fileUpload = require('express-fileupload');
+//var busboy = require('connect-busboy');
+//const fileUpload = require('express-fileupload');
 const validUrl = require('valid-url');
 const cors = require('cors');
 
 app.use(cors());
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 app.use(bodyParser.json());
-app.use(busboy());
-app.use(fileUpload()); // Don't forget this line!
+//app.use(busboy());
+//app.use(fileUpload()); // Don't forget this line!
 
 
 //importacion de routes
@@ -73,7 +73,7 @@ mongoose.connect(
     () => console.log('Conectado a MongoDB')*/
 );
 
-const AWS = require('aws-sdk');
+/*const AWS = require('aws-sdk');
 const Busboy = require('busboy');
 
 const BUCKET_NAME = 'pae2020';
@@ -99,14 +99,15 @@ function uploadToS3(file) {
             }
             console.log('success');
             console.log(data);
+            console.log(data.Location);
         });
     });
-}
+}*/
 
 
 //"element1": "test", "element2": image file
 
-app.post('/api/upload', function (req, res, next) {
+/*app.post('/api/upload', function (req, res, next) {
 
     const element1 = req.body.element1;
 
@@ -138,7 +139,7 @@ app.post('/api/upload', function (req, res, next) {
     });
 
     req.pipe(busboy);
-});
+});*/
 
 
 

@@ -40,8 +40,12 @@ const UsuariosSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    foto: {
+    element2: {
         type: String,
+        required: true
+    },
+    element1:{
+        type:String,
         required: true
     },
     estado: {
@@ -53,7 +57,7 @@ const UsuariosSchema = mongoose.Schema({
         required: true
     },
     favoritos: {
-        type: Array,
+        type: String,
         required: true
     }
 });

@@ -62,6 +62,10 @@ const ProfesionistasSchema = mongoose.Schema({
     descripcion: {
         type: String,
         required: true
+    },
+    profesion:{
+        type: String,
+        required: true
     }
 });
 
