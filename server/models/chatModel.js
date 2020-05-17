@@ -7,15 +7,15 @@ const ChatSchema = mongoose.Schema({
         required: true
     },
     uidUsuario: {
-        type: Number,
+        type: String,
         required: true
     },
     uidProfesionista: {
-        type: Number,
+        type: String,
         required: true
     },
     mensaje: {
-        type: [{senderId: Number, message: String}],
+        type: [{senderId: String, message: String}],
         required: false
     }
 });
