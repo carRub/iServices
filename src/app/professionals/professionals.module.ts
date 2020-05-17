@@ -11,6 +11,7 @@ import { HireComponent } from './hire/hire.component';
 // import { ScoreListComponent } from './score/score-list/score-list.component';
 import { ScoreModule } from './score/score.module';
 import { CoreModule } from '../core/core.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CoreModule } from '../core/core.module';
     CommonModule,
     ProfessionalsRoutingModule,
     ScoreModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule
   ],
   exports:[
     ProfessionalMainComponent
