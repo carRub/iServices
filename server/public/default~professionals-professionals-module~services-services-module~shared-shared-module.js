@@ -1,41 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~professionals-professionals-module~services-services-module~shared-shared-module"],{
 
-/***/ "./src/app/professionals/hire/hire.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/professionals/hire/hire.component.ts ***!
-  \******************************************************/
-/*! exports provided: HireComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HireComponent", function() { return HireComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-
-
-class HireComponent {
-    constructor() { }
-    ngOnInit() {
-    }
-}
-HireComponent.ɵfac = function HireComponent_Factory(t) { return new (t || HireComponent)(); };
-HireComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HireComponent, selectors: [["app-hire"]], decls: 2, vars: 0, template: function HireComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "hire works!");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAvcHJvZmVzc2lvbmFscy9oaXJlL2hpcmUuY29tcG9uZW50LnNjc3MifQ== */"] });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HireComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-                selector: 'app-hire',
-                templateUrl: './hire.component.html',
-                styleUrls: ['./hire.component.scss']
-            }]
-    }], function () { return []; }, null); })();
-
-
-/***/ }),
-
+  
 /***/ "./src/app/professionals/professional-detail/professional-detail.component.ts":
 /*!************************************************************************************!*\
   !*** ./src/app/professionals/professional-detail/professional-detail.component.ts ***!
@@ -48,8 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfessionalDetailComponent", function() { return ProfessionalDetailComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _professional_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../professional.service */ "./src/app/professionals/professional.service.ts");
+/* harmony import */ var _professional_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../professional.service */ "./src/app/professionals/professional.service.ts");
+/* harmony import */ var src_app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/auth/auth.service */ "./src/app/core/auth/auth.service.ts");
 /* harmony import */ var _score_score_list_score_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../score/score-list/score-list.component */ "./src/app/professionals/score/score-list/score-list.component.ts");
 
 
@@ -58,28 +23,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class ProfessionalDetailComponent {
-    constructor(router, route, location, professionalsService) {
+    constructor(router, route, professionalsService, authService) {
         this.router = router;
         this.route = route;
-        this.location = location;
         this.professionalsService = professionalsService;
+        this.authService = authService;
         this.professionals = [];
     }
     ngOnInit() {
         this.route.params.subscribe((params) => {
-            this.id = params.id;
+            this.profId = params.id;
         });
-        this.professionalsService.getProfessional(this.id).subscribe((data) => {
+        this.professionalsService.getProfessional(this.profId).subscribe((data) => {
             this.professionals.push(data);
             this.user = data;
         });
+        this.userId = this.authService.getCurrentUser();
     }
     test() {
         console.log(this.user);
+        console.log(this.userId);
     }
 }
-ProfessionalDetailComponent.ɵfac = function ProfessionalDetailComponent_Factory(t) { return new (t || ProfessionalDetailComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_professional_service__WEBPACK_IMPORTED_MODULE_3__["ProfessionalService"])); };
-ProfessionalDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfessionalDetailComponent, selectors: [["app-professional-detail"]], decls: 49, vars: 8, consts: [[1, "container"], [1, "row", "profile"], [1, "col-md-4"], [1, "profile-sidebar"], [1, "profile-userpic", "d-flex", "justify-content-center"], ["alt", "", 1, "img-responsive", 3, "src"], [1, "profile-usertitle"], [1, "profile-usertitle-name"], [1, "profile-usertitle-job"], [1, "profile-userbuttons"], ["type", "button", "href", "#", 1, "btn", "btn-p", "btn-sm"], ["type", "button", "routerLink", "/chat", 1, "btn", "btn-p", "btn-sm"], ["type", "button", 1, "btn", "btn-p", "btn-sm", 3, "click"], [1, "profile-usermenu", "panel", "panel-default"], [1, "list-group"], [1, "list-group-item", "text-muted", "justify-content-between"], [1, "list-group-item", "d-flex", "justify-content-between"], [1, "pull-left"], [1, "col-md-8", "panel", "panel-default"], [1, "profile-content", "panel", "panel-heading"], [1, "panel", "panel-body"], ["id", "professionalp"], [1, "panel", "panel-heading"]], template: function ProfessionalDetailComponent_Template(rf, ctx) { if (rf & 1) {
+ProfessionalDetailComponent.ɵfac = function ProfessionalDetailComponent_Factory(t) { return new (t || ProfessionalDetailComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_professional_service__WEBPACK_IMPORTED_MODULE_2__["ProfessionalService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"])); };
+ProfessionalDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProfessionalDetailComponent, selectors: [["app-professional-detail"]], decls: 49, vars: 10, consts: [[1, "container"], [1, "row", "profile"], [1, "col-md-4"], [1, "profile-sidebar"], [1, "profile-userpic", "d-flex", "justify-content-center"], ["alt", "", 1, "img-responsive", 3, "src"], [1, "profile-usertitle"], [1, "profile-usertitle-name"], [1, "profile-usertitle-job"], [1, "profile-userbuttons"], ["type", "button", 1, "btn", "btn-p", "btn-sm"], ["type", "button", 1, "btn", "btn-p", "btn-sm", 3, "routerLink"], ["type", "button", "routerLink", "/agenda", 1, "btn", "btn-p", "btn-sm"], [1, "profile-usermenu", "panel", "panel-default"], [1, "list-group"], [1, "list-group-item", "text-muted", "justify-content-between"], [1, "list-group-item", "d-flex", "justify-content-between"], [1, "pull-left"], [1, "col-md-8", "panel", "panel-default"], [1, "profile-content", "panel", "panel-heading"], [1, "panel", "panel-body"], ["id", "professionalp"], [1, "panel", "panel-heading"]], template: function ProfessionalDetailComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "body");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
@@ -104,8 +71,7 @@ ProfessionalDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Chat");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "a", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProfessionalDetailComponent_Template_a_click_17_listener() { return ctx.test(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Contratar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Agenda");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 13);
@@ -169,7 +135,9 @@ ProfessionalDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"](" ", ctx.user.nombre, " ", ctx.user.apellidos, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.user.profesion, " ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate2"]("routerLink", "/chat/conv/", ctx.profId, "/", ctx.userId, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.user.trabajosRealizados);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.user.calificacion);
@@ -185,7 +153,7 @@ ProfessionalDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["
                 templateUrl: './professional-detail.component.html',
                 styleUrls: ['./professional-detail.component.scss']
             }]
-    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }, { type: _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"] }, { type: _professional_service__WEBPACK_IMPORTED_MODULE_3__["ProfessionalService"] }]; }, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }, { type: _professional_service__WEBPACK_IMPORTED_MODULE_2__["ProfessionalService"] }, { type: src_app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }]; }, null); })();
 
 
 /***/ }),
@@ -393,10 +361,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _professional_main_professional_main_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./professional-main/professional-main.component */ "./src/app/professionals/professional-main/professional-main.component.ts");
 /* harmony import */ var _professional_detail_professional_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./professional-detail/professional-detail.component */ "./src/app/professionals/professional-detail/professional-detail.component.ts");
 /* harmony import */ var _professional_list_professional_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./professional-list/professional-list.component */ "./src/app/professionals/professional-list/professional-list.component.ts");
-/* harmony import */ var _hire_hire_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./hire/hire.component */ "./src/app/professionals/hire/hire.component.ts");
-/* harmony import */ var _score_score_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./score/score.module */ "./src/app/professionals/score/score.module.ts");
-/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../core/core.module */ "./src/app/core/core.module.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _score_score_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./score/score.module */ "./src/app/professionals/score/score.module.ts");
+/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../core/core.module */ "./src/app/core/core.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
 
 
@@ -404,38 +371,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+// import { HireComponent } from './hire/hire.component';
 // import { ScoreComponent } from './score/score.component';
 // import { ScoreListComponent } from './score/score-list/score-list.component';
 
 
 
 
+// import { SharedModule } from '../shared/shared.module';
 class ProfessionalsModule {
 }
 ProfessionalsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: ProfessionalsModule });
 ProfessionalsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function ProfessionalsModule_Factory(t) { return new (t || ProfessionalsModule)(); }, imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
             _professionals_routing_module__WEBPACK_IMPORTED_MODULE_2__["ProfessionalsRoutingModule"],
-            _score_score_module__WEBPACK_IMPORTED_MODULE_8__["ScoreModule"],
-            _core_core_module__WEBPACK_IMPORTED_MODULE_9__["CoreModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"]
+            _score_score_module__WEBPACK_IMPORTED_MODULE_7__["ScoreModule"],
+            _core_core_module__WEBPACK_IMPORTED_MODULE_8__["CoreModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](ProfessionalsModule, { declarations: [_professionals_component__WEBPACK_IMPORTED_MODULE_3__["ProfessionalsComponent"], _professional_main_professional_main_component__WEBPACK_IMPORTED_MODULE_4__["ProfessionalMainComponent"], _professional_detail_professional_detail_component__WEBPACK_IMPORTED_MODULE_5__["ProfessionalDetailComponent"], _professional_list_professional_list_component__WEBPACK_IMPORTED_MODULE_6__["ProfessionalListComponent"], _hire_hire_component__WEBPACK_IMPORTED_MODULE_7__["HireComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](ProfessionalsModule, { declarations: [_professionals_component__WEBPACK_IMPORTED_MODULE_3__["ProfessionalsComponent"], _professional_main_professional_main_component__WEBPACK_IMPORTED_MODULE_4__["ProfessionalMainComponent"], _professional_detail_professional_detail_component__WEBPACK_IMPORTED_MODULE_5__["ProfessionalDetailComponent"], _professional_list_professional_list_component__WEBPACK_IMPORTED_MODULE_6__["ProfessionalListComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
         _professionals_routing_module__WEBPACK_IMPORTED_MODULE_2__["ProfessionalsRoutingModule"],
-        _score_score_module__WEBPACK_IMPORTED_MODULE_8__["ScoreModule"],
-        _core_core_module__WEBPACK_IMPORTED_MODULE_9__["CoreModule"],
-        _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"]], exports: [_professional_main_professional_main_component__WEBPACK_IMPORTED_MODULE_4__["ProfessionalMainComponent"]] }); })();
+        _score_score_module__WEBPACK_IMPORTED_MODULE_7__["ScoreModule"],
+        _core_core_module__WEBPACK_IMPORTED_MODULE_8__["CoreModule"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"]], exports: [_professional_main_professional_main_component__WEBPACK_IMPORTED_MODULE_4__["ProfessionalMainComponent"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ProfessionalsModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-                declarations: [_professionals_component__WEBPACK_IMPORTED_MODULE_3__["ProfessionalsComponent"], _professional_main_professional_main_component__WEBPACK_IMPORTED_MODULE_4__["ProfessionalMainComponent"], _professional_detail_professional_detail_component__WEBPACK_IMPORTED_MODULE_5__["ProfessionalDetailComponent"], _professional_list_professional_list_component__WEBPACK_IMPORTED_MODULE_6__["ProfessionalListComponent"], _hire_hire_component__WEBPACK_IMPORTED_MODULE_7__["HireComponent"]],
+                declarations: [_professionals_component__WEBPACK_IMPORTED_MODULE_3__["ProfessionalsComponent"], _professional_main_professional_main_component__WEBPACK_IMPORTED_MODULE_4__["ProfessionalMainComponent"], _professional_detail_professional_detail_component__WEBPACK_IMPORTED_MODULE_5__["ProfessionalDetailComponent"], _professional_list_professional_list_component__WEBPACK_IMPORTED_MODULE_6__["ProfessionalListComponent"]],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                     _professionals_routing_module__WEBPACK_IMPORTED_MODULE_2__["ProfessionalsRoutingModule"],
-                    _score_score_module__WEBPACK_IMPORTED_MODULE_8__["ScoreModule"],
-                    _core_core_module__WEBPACK_IMPORTED_MODULE_9__["CoreModule"],
-                    _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"]
+                    _score_score_module__WEBPACK_IMPORTED_MODULE_7__["ScoreModule"],
+                    _core_core_module__WEBPACK_IMPORTED_MODULE_8__["CoreModule"],
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
                 ],
                 exports: [
                     _professional_main_professional_main_component__WEBPACK_IMPORTED_MODULE_4__["ProfessionalMainComponent"]

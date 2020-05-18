@@ -11,26 +11,27 @@ import { partitionArray } from '@angular/compiler/src/util';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService:AuthService, private route: ActivatedRoute,
-    private router:Router) {
+  currentUserId: string;
+
+  constructor(private authService: AuthService, private route: ActivatedRoute,
+              private router: Router) {
 
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
-  submit(formulario:NgForm){
+  submit(formulario: NgForm){
     console.log(formulario.value.email);
     console.log(formulario.value.password);
-    this.authService.login(formulario.value.email,formulario.value.password)
+    this.authService.login(formulario.value.email, formulario.value.password)
       .subscribe(
-        (data)=>{console.log(data)
-        this.router.navigateByUrl('/')},
-        (err)=>console.log(err)
-      )
+        (data) => { console.log(data);
+                    this.router.navigateByUrl('/');
+                    this.currentUserId = data.mid; },
+        (err) => console.log(err)
+      );
 
-      console.log("redirigir");
+    console.log("redirigir");
   }
 
 

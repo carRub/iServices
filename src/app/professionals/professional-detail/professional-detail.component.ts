@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { ProfessionalService } from '../professional.service';
-import { Subscription } from 'rxjs';
 import { Professional } from '../Professional';
+import { AuthService } from 'src/app/core/auth/auth.service';
+
+
 
 @Component({
   selector: 'app-professional-detail',
@@ -11,33 +12,37 @@ import { Professional } from '../Professional';
   styleUrls: ['./professional-detail.component.scss']
 })
 export class ProfessionalDetailComponent implements OnInit {
-  id: string;
+  profId: string;
+  userId: string
   user: Professional;
   professionals: Professional [];
 
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private location: Location,
-              private professionalsService: ProfessionalService) {
+              private professionalsService: ProfessionalService,
+              private authService: AuthService) {
                 this.professionals = [];
                }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.id = params.id;
+      this.profId = params.id;
     });
 
-    this.professionalsService.getProfessional(this.id).subscribe(
+    this.professionalsService.getProfessional(this.profId).subscribe(
       (data: Professional) => {
         this.professionals.push(data);
         this.user = data;
     }
     );
 
+    this.userId = this.authService.getCurrentUser();
+
   }
 
   test() {
     console.log(this.user);
+    console.log(this.userId);
   }
 
 }

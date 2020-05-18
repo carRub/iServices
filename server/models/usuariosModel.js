@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+
 /*const bcrypt = require('bcryptjs')
 const saltRounds = 12*/
 const AutoIncrement = require('mongoose-sequence')(mongoose);
+
 
 const UsuariosSchema = mongoose.Schema({
 
@@ -46,6 +48,7 @@ const UsuariosSchema = mongoose.Schema({
     }
 });
 
+
 UsuariosSchema.plugin(AutoIncrement, {inc_field: 'uid'});
 
 
@@ -53,5 +56,6 @@ UsuariosSchema.plugin(AutoIncrement, {inc_field: 'uid'});
     this.password = bcrypt.hashSync(this.password, saltRounds)
     next()
 });*/
+
 
 module.exports = mongoose.model('usuarios', UsuariosSchema);

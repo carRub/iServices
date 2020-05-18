@@ -4,19 +4,15 @@ const localStrategy = require('passport-local').Strategy;
 
 const jwt = require('jsonwebtoken');
 
-const users = require('../models/usuariosModel');
-const bcrypt = require('bcryptjs');
+const users = require('../models/usuariosModel'); 
 
 passport.use(new localStrategy({
     usernameField:'email',
     passwordField:'password'
 },async function(username,password,done){
     console.log("datos del form", username,password);
-    //password = bcrypt.hashSync(password,12);
-    console.log("datos del form", username,password);
     let usr = await users.findOne({email:username,password:password});
-    console.log("user encontrado",usr);
-    //"$2a$12$odRv1LwImlwFPpR8.xhLPeT4T0TFIysuaBScUs4x14pZQH7KSnAg6"
+
     if(usr){
         done(null,usr);
     }else{
@@ -29,9 +25,10 @@ passport.use(new localStrategy({
 function login(req,res){
     console.log("login with local passport",req.body);
     passport.authenticate('local',(err,usr,info)=>{
-        if(usr){
+        if(usr){    
+            console.log("this is user", usr);
             let token = jwt.sign({nombre:usr.nombre},'palabra muy secreta',{expiresIn:'1h'})
-            res.send({token})
+            res.send({token, mid: usr._id});
         }else{
             res.status(401).send(info);
         }

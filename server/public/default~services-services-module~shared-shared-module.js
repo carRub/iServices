@@ -57,7 +57,7 @@ class ServiceCardComponent {
     }
 }
 ServiceCardComponent.ɵfac = function ServiceCardComponent_Factory(t) { return new (t || ServiceCardComponent)(); };
-ServiceCardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ServiceCardComponent, selectors: [["app-service-card"]], inputs: { service: "service" }, decls: 16, vars: 3, consts: [[1, "container"], [1, "row"], [1, "card", 2, "width", "100%"], ["alt", "Generic placeholder image", 1, "card-img-top", "grid", 2, "width", "100%", 3, "src"], [1, "card-body"], [1, "mt-0", "mb-1"], [1, "card-title", 2, "color", "#000"], [1, "card-text", 2, "color", "#000"], [1, "media-right", "col-2", "mt-3"], [1, "row", "mt-3"], ["name", "", "id", "", "href", "#", "routerLink", "", "role", "button", 1, "btn", "btn-primary", 2, "margin-top", "8px"], [1, "fas", "fa-search"]], template: function ServiceCardComponent_Template(rf, ctx) { if (rf & 1) {
+ServiceCardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ServiceCardComponent, selectors: [["app-service-card"]], inputs: { service: "service" }, decls: 16, vars: 4, consts: [[1, "container"], [1, "row"], [1, "card", 2, "width", "100%"], ["alt", "Generic placeholder image", 1, "card-img-top", "grid", 2, "width", "100%", 3, "src"], [1, "card-body"], [1, "mt-0", "mb-1"], [1, "card-title", 2, "color", "#000"], [1, "card-text", 2, "color", "#000"], [1, "media-right", "col-2", "mt-3"], [1, "row", "mt-3"], ["name", "", "id", "", "href", "#", "role", "button", 1, "btn", "btn-primary", 2, "margin-top", "8px", 3, "routerLink"], [1, "fas", "fa-search"]], template: function ServiceCardComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -92,7 +92,10 @@ ServiceCardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.service.nombre);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Precio por hora:", ctx.service.precioPorHora, " $");
-    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAvc2VydmljZXMvc2VydmljZS1saXN0L3NlcnZpY2UtY2FyZC9zZXJ2aWNlLWNhcmQuY29tcG9uZW50LnNjc3MifQ== */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("routerLink", "../professionals/detail/", ctx.service._id, "");
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterLinkWithHref"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlcnZpY2VzL3NlcnZpY2UtbGlzdC9zZXJ2aWNlLWNhcmQvc2VydmljZS1jYXJkLmNvbXBvbmVudC5zY3NzIn0= */"] });
+
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ServiceCardComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{

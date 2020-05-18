@@ -22,6 +22,9 @@ import { ServicesModule } from '../services/services.module';
     FormsModule,
     HttpClientModule,
     ServicesModule
+  ],
+  exports: [
+    LoginComponent
   ]
 })
 export class SharedModule { }
