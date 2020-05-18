@@ -41,7 +41,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const routes = [{ path: 'google/redirect', loadChildren: () => Promise.all(/*! import() | shared-shared-module */[__webpack_require__.e("default~professionals-professionals-module~services-services-module~shared-shared-module"), __webpack_require__.e("default~shared-chat-chat-module~shared-shared-module"), __webpack_require__.e("default~services-services-module~shared-shared-module"), __webpack_require__.e("shared-shared-module")]).then(__webpack_require__.bind(null, /*! ./shared/shared.module */ "./src/app/shared/shared.module.ts")).then(m => m.SharedModule) },
+const routes = [{ path: 'auth/google/redirect', loadChildren: () => Promise.all(/*! import() | shared-shared-module */[__webpack_require__.e("default~professionals-professionals-module~services-services-module~shared-shared-module"), __webpack_require__.e("default~shared-chat-chat-module~shared-shared-module"), __webpack_require__.e("default~services-services-module~shared-shared-module"), __webpack_require__.e("shared-shared-module")]).then(__webpack_require__.bind(null, /*! ./shared/shared.module */ "./src/app/shared/shared.module.ts")).then(m => m.SharedModule) },
     { path: 'clients', loadChildren: () => __webpack_require__.e(/*! import() | clients-clients-module */ "clients-clients-module").then(__webpack_require__.bind(null, /*! ./clients/clients.module */ "./src/app/clients/clients.module.ts")).then(m => m.ClientsModule), canActivate: [_core_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]] },
     { path: 'core', loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./core/core.module */ "./src/app/core/core.module.ts")).then(m => m.CoreModule) },
     { path: 'professionals', loadChildren: () => __webpack_require__.e(/*! import() | professionals-professionals-module */ "default~professionals-professionals-module~services-services-module~shared-shared-module").then(__webpack_require__.bind(null, /*! ./professionals/professionals.module */ "./src/app/professionals/professionals.module.ts")).then(m => m.ProfessionalsModule) },
@@ -97,7 +97,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-header");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "router-outlet");
-    } }, directives: [_core_header_header_component__WEBPACK_IMPORTED_MODULE_1__["HeaderComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */"] });
+    } }, directives: [_core_header_header_component__WEBPACK_IMPORTED_MODULE_1__["HeaderComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAvYXBwLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -311,7 +311,7 @@ class AuthService {
     }
     googleLogin(params) {
         console.log("Login with google");
-        return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].url + 'auth/google/redirect', { params })
+        return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].url + 'auth/api/google/redirect', { params })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((data) => {
             console.log("DATA", data);
             if (data.token) {
@@ -395,7 +395,7 @@ CoreComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "core works!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvY29yZS5jb21wb25lbnQuc2NzcyJ9 */"] });
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAvY29yZS9jb3JlLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoreComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -543,7 +543,7 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.logueado);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado);
-    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"]], styles: [".userNavBar[_ngcontent-%COMP%] {\n  color: white;\n}\n\n\n\n.userNavBar[_ngcontent-%COMP%]:hover {\n  background-color: white;\n  color: #444;\n}\n\n.navbar-brand[_ngcontent-%COMP%] {\n  color: #8448FF;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jYXJsb3MucnViaW8vRG9jdW1lbnRzL0lURVNPLzdtby9QQUUvaVNlcnZpY2VzL3NyYy9hcHAvY29yZS9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb3JlL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0FDQ0o7O0FER0Esc0JBQUE7O0FBRUE7RUFDSSx1QkFBQTtFQUNBLFdBQUE7QUNESjs7QURJQTtFQUNJLGNBQUE7QUNESiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi51c2VyTmF2QmFyIHtcbiAgICBjb2xvcjogd2hpdGU7XG59XG5cblxuLypVc2VyIGRyb3Bkb3duIGhvdmVyKi9cblxuLnVzZXJOYXZCYXI6aG92ZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgIGNvbG9yOiAjNDQ0O1xufVxuXG4ubmF2YmFyLWJyYW5kIHtcbiAgICBjb2xvcjogIzg0NDhGRjtcbn1cbiIsIi51c2VyTmF2QmFyIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4vKlVzZXIgZHJvcGRvd24gaG92ZXIqL1xuLnVzZXJOYXZCYXI6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgY29sb3I6ICM0NDQ7XG59XG5cbi5uYXZiYXItYnJhbmQge1xuICBjb2xvcjogIzg0NDhGRjtcbn0iXX0= */"] });
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"]], styles: [".userNavBar[_ngcontent-%COMP%] {\n  color: white;\n}\n\n\n\n.userNavBar[_ngcontent-%COMP%]:hover {\n  background-color: white;\n  color: #444;\n}\n\n.navbar-brand[_ngcontent-%COMP%] {\n  color: #8448FF;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9jb3JlL2hlYWRlci9DOlxcVXNlcnNcXGpvYXF1XFxEZXNrdG9wXFxQQUVXUHJveWVjdG9GaW5hbFxcaVNlcnZpY2VzXFxzcmMvYXBwXFxjb3JlXFxoZWFkZXJcXGhlYWRlci5jb21wb25lbnQuc2NzcyIsImFwcC9jb3JlL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0FDQ0o7O0FER0Esc0JBQUE7O0FBRUE7RUFDSSx1QkFBQTtFQUNBLFdBQUE7QUNESjs7QURJQTtFQUNJLGNBQUE7QUNESiIsImZpbGUiOiJhcHAvY29yZS9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnVzZXJOYXZCYXIge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG5cclxuLypVc2VyIGRyb3Bkb3duIGhvdmVyKi9cclxuXHJcbi51c2VyTmF2QmFyOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY29sb3I6ICM0NDQ7XHJcbn1cclxuXHJcbi5uYXZiYXItYnJhbmQge1xyXG4gICAgY29sb3I6ICM4NDQ4RkY7XHJcbn1cclxuIiwiLnVzZXJOYXZCYXIge1xuICBjb2xvcjogd2hpdGU7XG59XG5cbi8qVXNlciBkcm9wZG93biBob3ZlciovXG4udXNlck5hdkJhcjpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBjb2xvcjogIzQ0NDtcbn1cblxuLm5hdmJhci1icmFuZCB7XG4gIGNvbG9yOiAjODQ0OEZGO1xufSJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HeaderComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -571,7 +571,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    url: 'http://localhost:3000'
+    url: ''
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -618,7 +618,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/carlos.rubio/Documents/ITESO/7mo/PAE/iServices/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\joaqu\Desktop\PAEWProyectoFinal\iServices\src\main.ts */"./src/main.ts");
 
 
 /***/ }),

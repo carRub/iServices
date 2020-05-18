@@ -8,7 +8,7 @@ const passportLocal = require('./passportLocal');
 const passportGoogle = require('./passportGoogle');
 const passport = require('passport');
 
-router.post('/', function (req, res, next) {
+/*router.post('/', function (req, res, next) {
     if (!req.body.email || !req.body.password) {
         res.status(400).json({
             status: "error",
@@ -60,7 +60,7 @@ router.post('/', function (req, res, next) {
             }
         }
     });
-});
+});*/
 
 router.post('/',passportLocal.login);
 
@@ -68,7 +68,7 @@ router.get('/google/login',passport.authenticate('google',{scope:['profile','ema
 
 
 //router.get('/google/redirect',passportGoogle.googleLogin);
-router.get('/google/redirect',passportGoogle.googleLogin);
+router.get('/api/google/redirect',passportGoogle.googleLogin);
 
 module.exports = router;
 
