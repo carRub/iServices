@@ -85,7 +85,7 @@ export class AuthService {
   }
   public googleLogin(params){
     console.log("Login with google");
-    return this.http.get(environment.url+'auth/google/redirect',{params})
+    return this.http.get(environment.url+'auth/api/google/redirect',{params})
     .pipe(
       map((data:any)=>{
         console.log("DATA",data);
@@ -104,8 +104,10 @@ export class AuthService {
     )
   }
 
+
   public getCurrentUser() {
     return this.currentUserId;
   }
+
 
 }

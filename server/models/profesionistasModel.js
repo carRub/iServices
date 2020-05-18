@@ -46,10 +46,6 @@ const ProfesionistasSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    profesionista: {
-        type: Boolean,
-        required: true
-    },
     calificacion: {
         type: Number,
         required: true,

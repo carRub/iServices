@@ -68,7 +68,7 @@ router.get('/google/login',passport.authenticate('google',{scope:['profile','ema
 
 
 //router.get('/google/redirect',passportGoogle.googleLogin);
-router.get('/google/redirect',passportGoogle.googleLogin);
+router.get('/api/google/redirect',passportGoogle.googleLogin);
 
 module.exports = router;
 

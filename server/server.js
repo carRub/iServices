@@ -6,16 +6,20 @@ require('dotenv/config');
 const bodyParser = require('body-parser');
 const swaggerUI = require('swagger-ui-express');
 const swaggerDoc = require('./doc/swagger.json');
-//var busboy = require('connect-busboy');
-//const fileUpload = require('express-fileupload');
+var busboy = require('connect-busboy');
+const fileUpload = require('express-fileupload');
 const validUrl = require('valid-url');
+//cloud
+const path = require('path');
 const cors = require('cors');
+app.set("view options", {layout: false});
 
-app.use(cors());
+app.use(cors())
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 app.use(bodyParser.json());
-//app.use(busboy());
-//app.use(fileUpload()); // Don't forget this line!
+app.use(busboy());
+app.use(fileUpload()); // Don't forget this line!
+app.use('/', express.static('img'));
 
 
 //importacion de routes
@@ -25,7 +29,7 @@ const serviciosRoute = require('./routes/serviciosRoute');
 const calificacionRoute = require('./routes/calificacionRoute');
 const authRoute = require('./routes/authRoute');
 const chatRoute = require('./routes/chatRoute');
-
+//app.use('/registro111',express.static(__dirname + 'views/registroUsuario.html'));
 
 app.use('/usuarios', usuariosRoute);
 app.use('/profesionistas', profesionistasRoute);
@@ -38,6 +42,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(express.static(__dirname+'/public'));
+
+
 
 
 //routes
@@ -66,21 +72,20 @@ app.get('/', (req, res) => {
 });
 
 
-
 // conexion de BD
 mongoose.connect(
     process.env.DB_CONNECTION, {
         useUnifiedTopology: true
-    }/*,
-    () => console.log('Conectado a MongoDB')*/
+    },
+    () => console.log('Conectado a MongoDB')
 );
 
 /*const AWS = require('aws-sdk');
 const Busboy = require('busboy');
 
 const BUCKET_NAME = 'pae2020';
-const IAM_USER_KEY = 'AKIAWZONVNHI3NET4KEL';
-const IAM_USER_SECRET = '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';
+const IAM_USER_KEY = 'AKIAWZONVNHIW7A55GXY';
+const IAM_USER_SECRET = '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';
 
 function uploadToS3(file) {
     let s3bucket = new AWS.S3({
@@ -101,15 +106,15 @@ function uploadToS3(file) {
             }
             console.log('success');
             console.log(data);
-            console.log(data.Location);
+            console.log(data.Location); //URL de imagen publica
         });
     });
-}*/
+}
 
 
 //"element1": "test", "element2": image file
 
-/*app.post('/api/upload', function (req, res, next) {
+app.post('/api/upload', function (req, res, next) {
 
     const element1 = req.body.element1;
 
@@ -143,9 +148,6 @@ function uploadToS3(file) {
     req.pipe(busboy);
 });*/
 
-
-
-
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -163,9 +165,3 @@ app.get('*',(req,res)=>{
 
 http.listen(port, () => console.log(`Listening on port ${port}`));
 
-// app.listen(port, err => {
-//     if (err) {
-//         return console.log("ERROR");
-//     }
-//     console.log(`Listening on port: ${port}`);
-// })

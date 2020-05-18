@@ -18,18 +18,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      if (params.code){
-          this.authService.googleLogin(params).subscribe((data) => {
-            if (this.authService.isLoggedIn()){
-              this.router.navigateByUrl('/chat');
-            }
-          });
-      }
-
-    });
-  }
+  ngOnInit(): void { }
 
   submit(formulario: NgForm){
     console.log(formulario.value.email);

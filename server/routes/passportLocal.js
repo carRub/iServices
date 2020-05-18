@@ -4,7 +4,7 @@ const localStrategy = require('passport-local').Strategy;
 
 const jwt = require('jsonwebtoken');
 
-const users = require('../models/usuariosModel');
+const users = require('../models/usuariosModel'); 
 
 passport.use(new localStrategy({
     usernameField:'email',
@@ -12,7 +12,6 @@ passport.use(new localStrategy({
 },async function(username,password,done){
     console.log("datos del form", username,password);
     let usr = await users.findOne({email:username,password:password});
-    //console.log("user encontrado",usr);
 
     if(usr){
         done(null,usr);
