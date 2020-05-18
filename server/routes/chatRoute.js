@@ -3,6 +3,7 @@ const router = express.Router();
 const chatModel = require('../models/chatModel');
 
 router.get('/', async (req, res) => {
+    console.log(req.body);
     try{
         const getChat = await chatModel.find({uidUsuario: req.body.uidUsuario, uidProfesionista: req.body.uidProfesionista});
         res.json(getChat);
@@ -26,11 +27,12 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    let mensajes = []
     const newChat = new chatModel({
         id: req.body.id,
         uidUsuario: req.body.uidUsuario,
         uidProfesionista: req.body.uidProfesionista,
-        mensaje: req.body.mensaje
+        // mensaje: req.body.mensaje
     });
 
     try {

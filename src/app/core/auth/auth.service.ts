@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   token = "";
+  currentUserId: string;
   logueado = new BehaviorSubject<boolean>(false);
 
 
@@ -22,6 +23,10 @@ export class AuthService {
   private saveToken(token:string){
     localStorage.setItem('token',token);
     this.token = token;
+  }
+
+  private saveUserId(id: string) {
+    this.currentUserId = id;
   }
 
   public isLoggedIn():boolean{
@@ -56,7 +61,7 @@ export class AuthService {
       map((data:any)=>{
         console.log("DATA",data);
         if(data.token){
-          
+          this.saveUserId(data.mid);
           this.saveToken(data.token);
           this.isLoggedIn();
           console.log("Guardando Token",data.token);
@@ -72,6 +77,7 @@ export class AuthService {
 
   public logout(){
     this.token = "";
+    this.currentUserId = '';
     window.localStorage.removeItem('token');
     this.router.navigateByUrl('/');
     this.logueado.next(false);
@@ -96,6 +102,10 @@ export class AuthService {
         return data;
       })
     )
+  }
+
+  public getCurrentUser() {
+    return this.currentUserId;
   }
 
 }

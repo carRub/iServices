@@ -191,6 +191,7 @@ class LoginComponent {
             .subscribe((data) => {
             console.log(data);
             this.router.navigateByUrl('/');
+            this.currentUserId = data.mid;
         }, (err) => console.log(err));
         console.log("redirigir");
     }
@@ -544,7 +545,7 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
         _chat_chat_module__WEBPACK_IMPORTED_MODULE_7__["ChatModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
-        _services_services_module__WEBPACK_IMPORTED_MODULE_11__["ServicesModule"]] }); })();
+        _services_services_module__WEBPACK_IMPORTED_MODULE_11__["ServicesModule"]], exports: [_login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SharedModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
@@ -556,6 +557,9 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
                     _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
                     _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
                     _services_services_module__WEBPACK_IMPORTED_MODULE_11__["ServicesModule"]
+                ],
+                exports: [
+                    _login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"]
                 ]
             }]
     }], null, null); })();

@@ -265,6 +265,9 @@ class AuthService {
         localStorage.setItem('token', token);
         this.token = token;
     }
+    saveUserId(id) {
+        this.currentUserId = id;
+    }
     isLoggedIn() {
         const tokenData = this.getTokenData();
         console.log(tokenData);
@@ -294,6 +297,7 @@ class AuthService {
             pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((data) => {
             console.log("DATA", data);
             if (data.token) {
+                this.saveUserId(data.mid);
                 this.saveToken(data.token);
                 this.isLoggedIn();
                 console.log("Guardando Token", data.token);
@@ -305,6 +309,7 @@ class AuthService {
     }
     logout() {
         this.token = "";
+        this.currentUserId = '';
         window.localStorage.removeItem('token');
         this.router.navigateByUrl('/');
         this.logueado.next(false);
@@ -322,6 +327,9 @@ class AuthService {
             console.log("token guardado", this.token);
             return data;
         }));
+    }
+    getCurrentUser() {
+        return this.currentUserId;
     }
 }
 AuthService.ɵfac = function AuthService_Factory(t) { return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"])); };

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs')
+// const bcrypt = require('bcryptjs')
 
 const saltRounds = 12
 
@@ -62,9 +62,9 @@ const UsuariosSchema = mongoose.Schema({
     }
 });
 
-UsuariosSchema.pre('save', function (next) {
-    this.password = bcrypt.hashSync(this.password, saltRounds)
-    next()
-});
+// UsuariosSchema.pre('save', function (next) {
+//     this.password = bcrypt.hashSync(this.password, saltRounds)
+//     next()
+// });
 
 module.exports = mongoose.model('usuarios', UsuariosSchema);
