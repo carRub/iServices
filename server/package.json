@@ -19,6 +19,7 @@
     "mocha": "^7.1.2",
     "mongoose": "^5.9.10",
     "mongoose-auto-increment": "^5.0.1",
+    "mongoose-sequence": "^5.2.2",
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
     "passport-local": "^1.0.0",
@@ -31,7 +32,11 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.14.1"
   },
   "jest": {
     "testEnvironment": "node"
