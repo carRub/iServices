@@ -16,7 +16,7 @@
     "express-fileupload": "^1.1.7-alpha.3",
     "express-handlebars": "^4.0.3",
     "jsonwebtoken": "^8.5.1",
-    "mocha": "^7.1.2",
+    "mocha": "^10.2.0",
     "mongoose": "^5.9.10",
     "mongoose-auto-increment": "^5.0.1",
     "mongoose-sequence": "^5.2.2",
